@@ -1,0 +1,18 @@
+#수들의 합
+#S에 값 입력 후 서로 다른 n개의 수를 더해 S를 만들때 n의 최댓값
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    long S;
+    cin >> S;
+    long i = 1;
+    while(1){
+        if(((pow(i, 2)+i)/2) > S)
+            break;
+        i++;
+    }
+    cout << i -1;
+}
