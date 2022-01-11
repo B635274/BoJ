@@ -1,0 +1,29 @@
+#쉽게 푸는 문제
+#1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 이런 식의 수열일때 a ~ b까지 값의 합을 구해라
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a, b;
+    int v[1000];
+    cin >> a >> b;
+    int sum = 0;
+    int cnt=0;
+    int idx = 1;
+    
+    for(int i = 0; i<1000; i++){
+        for(int j = 0; j<=i && cnt<1000; j++){
+            v[cnt] = idx;
+            cnt++;
+        }
+        idx++;
+    }
+    
+    for(int i = a - 1; i<b; i++){
+        sum = sum + v[i];
+    }
+
+    cout << sum;
+    return 0;
+}
