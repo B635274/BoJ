@@ -1,0 +1,25 @@
+#최대공약수와 최소공배수
+
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b){
+    int r = a % b;
+    if(r == 0){
+        return b;
+    }
+    else return gcd(b, r);
+}
+
+int main(){
+    int A, B;
+    cin >> A >> B;
+    int m, n;
+    if(A > B)
+        m = gcd(A, B);
+    else
+        m = gcd(B, A);
+    n = A * B / m ;
+    cout << m << "\n" << n;
+    return 0;   
+}
