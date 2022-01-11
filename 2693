@@ -1,0 +1,22 @@
+#N번째 큰 수
+#10개의 항을 가지는 배열을 T만큼의 테스트케이스에 대하여 3번째로 큰 수를 출력해라
+
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    int T;
+    int str[10] = { 0, };
+    int tmp;
+    cin >> T;
+    for(int i = 0; i < T; i++){
+        for(int j = 0; j < 10; j++){
+            cin >> str[j];
+        }
+        sort(str, str+10);
+        cout << str[7] << endl;
+    }
+    return 0;
+}
