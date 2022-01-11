@@ -1,0 +1,30 @@
+#소수
+#A, B 사이의 소수를 모두 찾고 최솟값과 소수들의 합을 구하시오
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int A, B;
+    int min = -1;
+    int sum = 0;
+    int tmp = 0;
+    cin >> A >> B;
+
+    for(int i = A; i <= B; i++){
+        for(int j = 1; j <= i; j++){
+            if(i%j == 0)
+                tmp++;
+        }
+        if(tmp == 2){
+            if(min == -1)
+                min = i;
+            sum += i;
+        }
+        tmp = 0;
+    }
+    if(min == -1) 
+        cout << -1 << '\n';
+    else 
+        cout << sum << '\n' << min << '\n';    
+}
