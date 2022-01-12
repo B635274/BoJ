@@ -1,0 +1,33 @@
+#C
+#한수 - 각 자릿수의 숫자가 등차수열을 이루는 수를 한수라고 한다
+#N을 주고 N보다 같거나 작은 수들중 한수의 갯수를 구하시오
+
+
+#include <stdio.h>
+
+int main(void){
+    int val, result;
+    int a[3];
+    scanf("%d", &val);
+    
+    if(val < 100){
+        result = val;
+    }
+    else result = 99;
+    
+    for(int i = 100; i <= val; i++){
+        a[0] = i / 100;
+        a[1] = (i % 100) / 10;
+        a[2] = i % 10;
+        if(a[0] == 10)
+            a[0] = 9;
+    
+        if(a[0] - a[1] == a[1] - a[2])
+            result++;
+    }
+    
+    printf("%d", result);
+    
+    
+    
+}
