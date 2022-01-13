@@ -1,0 +1,17 @@
+#C
+#회전하는 큐
+
+#include <stdio.h>
+
+int main() { 
+    int q_size, m, s, c=1, t, ans=0; 
+    static char v[52]; 
+    scanf("%d%d",&q_size,&m); 
+    for(int r=0;r<m;r++) { 
+        scanf("%d",&s); 
+        for(t=0;c!=s;c=c%q_size+1) t+=v[c]==0; 
+        ans += (t<q_size-r-t)?t:q_size-r-t; v[c]=1; 
+    } 
+    printf("%d\n", ans); 
+}
+
