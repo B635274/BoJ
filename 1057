@@ -1,0 +1,20 @@
+#C
+#토너먼트
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int t, cnt =0;
+    float n, m;
+    
+    scanf("%d %f %f", &t, &n, &m);
+    
+    while(n!=m){
+        n = ceil(n/2);
+        m = ceil(m/2);
+        cnt++;
+    }
+    printf("%d", cnt);
+    
+}
